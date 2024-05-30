@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbdulAmin Fara - Personal Website</title>
+    <style>
+        :root {
+            --light-bg-color: #f4f4f4;
+            --light-text-color: #333;
+            --light-header-footer-bg: #333;
+            --light-header-footer-text: #fff;
+            --dark-bg-color: #1e1e1e;
+            --dark-text-color: #f4f4f4;
+            --dark-header-footer-bg: #444;
+            --dark-header-footer-text: #fff;
+            --primary-color: #4CAF50;
+            --secondary-color: #FF5722;
+            --hover-color: #e0e0e0; /* Color for hover effect */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg-color);
+            color: var(--light-text-color);
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        header, footer {
+            background-color: var(--light-header-footer-bg);
+            color: var(--light-header-footer-text);
+            text-align: center;
+            padding: 1em 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+
+            nav a {
+                float: left;
+                display: block;
+                color: #fff;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                transition: background-color 0.3s, font-size 0.3s;
+            }
+
+                nav a:hover {
+                    background-color: var(--primary-color);
+                    color: #fff;
+                    font-size: 110%;
+                }
+
+        section {
+            padding: 20px;
+            text-align: center; /* Center align content */
+        }
+
+        h2, h3 { /* Center align titles */
+            color: var(--primary-color); /* Change title color */
+        }
+
+        #home img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            transition: transform 0.3s;
+        }
+
+            #home img:hover {
+                transform: scale(1.1);
+            }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-entry {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+            .timeline-entry::after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                right: -17px;
+                background-color: white;
+                border: 4px solid #444;
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .timeline-entry.left {
+                left: 0;
+            }
+
+            .timeline-entry.right {
+                left: 50%;
+            }
+
+                .timeline-entry.right::before {
+                    content: " ";
+                    height: 0;
+                    position: absolute;
+                    top: 22px;
+                    width: 0;
+                    z-index: 1;
+                    right: 30px;
+                    border: medium solid #444;
+                    border-width: 10px 0 10px 10px;
+                    border-color: transparent transparent transparent #444;
+                }
+
+            .timeline-entry.left::before {
+                content: " ";
+                height: 0;
+                position: absolute;
+                top: 22px;
+                width: 0;
+                z-index: 1;
+                left: 30px;
+                border: medium solid #444;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #444 transparent transparent;
+            }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: #444;
+            position: relative;
+            border-radius: 6px;
+            color: #fff;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+            .project:hover {
+                transform: scale(1.02);
+                background-color: #ddd;
+            }
+
+        .project-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 1em;
+        }
+
+        /* Hover effect for About Me section */
+        #about p {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            #about p:hover {
+                background-color: var(--hover-color);
+                color: var(--primary-color);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AbdulAmin Fara</h1>
+        <p>Management Information System</p>
+    </header>
+
+    <button class="theme-toggle-button" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button><nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skill Sets</a>
+        <a href="#employment">Employment History</a>
+    </nav>
+
+    <section id="home">
+        <div class="text-container">
+            <h2>Welcome to My Personal Website</h2>
+            <p class="overlay-text">A student leader, focused on achieving results, who has excelled in a variety of professional and academic settings. Demonstrates capacity to assess issues, find solutions, adhere to schedules, and collaborate. Future MIS graduate with excellent organization and focus.</p>
+        </div>
+        <img src="C:/Users/abdul/OneDrive/Pictures/ProfessionalPicture.jpg" alt="Professional Picture" />
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am an international student hailing from Kenya, pursuing a major in Management Information Systems alongside an accelerated master's program in Management Information Technology. Beyond my academic pursuits, I find joy in both watching and participating in sports, particularly soccer and basketball. Additionally, I have a passion for music and am proficient in playing the bass guitar and drums.</p>
+
+        <div class="timeline">
+            <div class="timeline-entry left">
+                <div class="timeline-content">
+                    <h3>2018</h3>
+                    <p>I enrolled in the United World College (UWC) program and relocated to Norway to pursue the International Baccalaureate (IB) diploma. Living alongside 200 students from 100 different countries, I specialized in Higher level subjects such as Economics, Physics, and Global Politics, while also studying Mathematics, English, and Spanish at the lower level.</p>
+                </div>
+            </div>
+            <div class="timeline-entry right">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>I successfully completed my International Baccalaureate (IB) Diploma and received a Red Cross Certificate upon graduating from UWC Red Cross Nordic.</p>
+                </div>
+            </div>
+            <div class="timeline-entry left">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>I was accepted to the University of Oklahoma with a full scholarship. It marked my first time moving to the United States, where I eagerly began my undergraduate journey, majoring in Management Information Systems.</p>
+                </div>
+            </div>
+            <div class="timeline-entry right">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>I began my accelerated masters in Management Information Technology. Throughout this journey, I focus on courses such as Machine Learning, Management of Business Intelligence, Business Data Analysis and other analytical courses.</p>
+                </div>
+            </div>
+            <div class="timeline-entry left">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>I was chosen as a graduate assistant to three professors, where I taught approximately 150 students programming and database languages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3 class="project-title">Database Project</h3>
+            <p class="project-description">The goal of this database project was to develop a comprehensive and efficient database management system to store, organize and manage data for Sonner Tire Company. Sonner Tire Company identified its need for data process that keep up with the rate of growth in the organization. The project involved the design, development, testing, and implementation of a database system for Sonner Tire Company. This database allows Sonner Tire Company to accommodate increasing sales and service volumes as the organization grows. Working alongside three team members, our initial task was to engage with the client, seeking their expectations for the desired database system. Subsequently, we crafted an Entity-Relationship Diagram (ERD) that comprehensively addressed the articulated needs of the client. Following this, our responsibilities extended to executing both the logical and physical design aspects and conducting database testing through the formulation and execution of SQL statements.</p>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">MIS Field Project</h3>
+            <p class="project-description">Our project was based on data provided by the company QVC. The company provided 6 datasets: customers, email campaigns, orders, products, product airtime, and social media use. Each of these datasets was pulled from the first quarter of 2023, January 1 to March 31. We leveraged this data to create a database in SQL Server Management Studio. Using our chosen business intelligence tool, Tableau, we conducted an in-depth analysis. Our project focused on evaluating the effectiveness and methods of advertising, sales, and general consumer behavior. We assessed the impact of advertisements and campaigns from both a financial/company spending perspective and a quantity of orders placed context. Additionally, we examined sales patterns and consumer behavior based on location, while also considering external factors.</p>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">Data Science Project</h3>
+            <p class="project-description">The question we wanted to explore was how global sales were impacted by different factors of video games. The video game industry is dynamic and ever-evolving, with numerous factors influencing global sales trends. Our research delved into understanding the intricate interplay between platform types, game genres, and regional sales patterns to uncover insights that could inform strategic decision-making in the gaming industry. To achieve this, we utilized various methods like linear regression, logistic regression, decision trees, and association rules.</p>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">Machine Learning</h3>
+            <p class="project-description">In this project, we used the Labeled Faces in the Wild (LFW) dataset, which is a benchmark dataset for computer vision and facial recognition. Using One-Shot Learning, we attempted to create a robust Siamese Neural Network that is good with identifying similarity in facial images. In this project, we tried to replicate a Kaggle project titled “Siamese-Neural-Networks-One-shot-Image-Recognition” created by user Nevo Itzhak.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skill Sets</h2>
+        <p>ERD, SQL, C#, R, Advanced Excel, Data Analysis and Visualization, Microsoft Power Apps, MS Visual Studio, MS Power BI, Tableau, Project Management, Computer Hardware, Software Troubleshooting, Microsoft Power Automate, and Data Management.</p>
+    </section>
+
+    <section id="employment">
+        <h2>Employment History</h2>
+
+        <div class="employment-entry">
+            <h3>Quality Audit Intern</h3>
+            <div class="company-info">
+                <p>American Fidelity Assurance Company</p>
+                <p>
+                    June 2023 - Dec 2023
+                </p>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Proficiently support more than 100 customers daily by addressing their inquiries related to claims and account management.</li>
+                    <li>Meticulously reconcile customer invoices and payments to ensure precision and accuracy.</li>
+                    <li>Thoroughly verify and cross-reference recorded data with customer insurance forms and applications to maintain data correctness.</li>
+                    <li>Collaborate within a dynamic team of six technology associates to collectively achieve company objectives.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="employment-entry">
+            <h3>Business Analyst</h3>
+            <div class="company-info">
+                <p>OK Catalyst</p>
+                <p>February 2023 - May 2023</p>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Conducted in-depth research on prospective small business owners to gather data for demographic analysis.</li>
+                    <li>Created and managed surveys while maintaining data lists through automated workflows using Forms, SharePoint, and Power Automate.</li>
+                    <li>Developed custom applications using Power Apps to generate tailored reports based on research results.</li>
+                    <li>Utilized Power BI for the purpose of data visualization and crafting dynamic dashboards to support the firm's decision-making processes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="employment-entry">
+            <h3>IT Technician</h3>
+            <div class="company-info">
+                <p>Price College of Business</p>
+                <p>August 2021 - May 2023</p>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Utilized interpersonal skills to provide exceptional customer service to students, faculty, and staff.</li>
+                    <li>Played a pivotal role in configuring new computer systems and performing system administration tasks for students, faculty, and staff.</li>
+                    <li>Leveraged technical expertise to troubleshoot and resolve hardware and software issues efficiently.</li>
+                    <li>Supervised and administered proctoring for Microsoft Word, PowerPoint, and Excel computational examinations, ensuring a fair testing environment.</li>
+                    <li>Exhibited strong leadership capabilities by training and mentoring fellow student computer lab assistants, contributing to their professional growth and the lab's overall effectiveness.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 AbdulAmin Fara - Personal Website</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+
+            const isLightTheme = !body.classList.contains('dark-mode');
+            body.style.setProperty('--light-bg-color', isLightTheme ? '#f4f4f4' : 'var(--dark-bg-color)');
+            body.style.setProperty('--light-text-color', isLightTheme ? '#333' : 'var(--dark-text-color)');
+            body.style.setProperty('--light-header-footer-bg', isLightTheme ? '#333' : 'var(--dark-header-footer-bg)');
+            body.style.setProperty('--light-header-footer-text', isLightTheme ? '#fff' : 'var(--dark-header-footer-text)');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function () {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
